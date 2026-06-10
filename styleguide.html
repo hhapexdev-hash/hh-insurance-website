@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Style Guide (internal) — HH Insurance Redesign</title>
+<meta name="description" content="Design tokens, type scale, components, motion, and voice for the hhinsgroup.com redesign. Internal handoff document.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAF9F5">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1B27">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1F30'/%3E%3Ctext x='30' y='43' font-family='Georgia,serif' font-size='28' font-weight='700' fill='%23FAF9F5' text-anchor='middle'%3EHH%3C/text%3E%3Ccircle cx='49' cy='40' r='4.5' fill='%23E2502F'/%3E%3C/svg%3E">
+<meta property="og:title" content="Style Guide (internal) — HH Insurance Redesign">
+<meta property="og:description" content="Design tokens, type scale, components, motion, and voice for the hhinsgroup.com redesign.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="proto">Internal handoff document — the system behind the prototype, for whoever builds production</div>
+
+<header class="site" id="hdr">
+  <nav class="wrap nav" id="nav" aria-label="Main">
+    <a class="logo" href="index.html">HH<em>.</em><span class="logotag">Insurance</span></a>
+    <ul style="margin-left:auto"><li><a href="index.html">← Back to site</a></li></ul>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">Home</a><span>/</span>Style guide</p>
+    <h1 class="fade">One system,<br><em>every surface.</em></h1>
+    <p class="lede fade">Tokens, type, components, motion, and voice for hhinsgroup.com — and for keeping the marketing site and the client portal reading as one brand. Everything here is live CSS from <code style="font-family:ui-monospace,Menlo,monospace;font-size:15px">style.css</code>, not mockups.</p>
+  </div>
+</section>
+
+<!-- COLOR -->
+<section style="padding:24px 0 96px">
+  <div class="wrap">
+    <div class="shead fade">
+      <p class="eyebrow">01 · Color</p>
+      <h2>A small palette, used strictly</h2>
+      <p>One accent. If something is coral, it's an action. Dark mode swaps the neutrals automatically via <code style="font-family:ui-monospace,Menlo,monospace;font-size:14px">prefers-color-scheme</code> — flip your OS to see this page re-skin itself.</p>
+    </div>
+    <div class="swgrid fade">
+      <div class="sw"><div class="swatch" style="background:#FAF9F5;border-bottom:1px solid var(--hairline)"></div><p class="meta2"><b>Warm off-white</b><code>--bg · #FAF9F5</code>page background (light)</p></div>
+      <div class="sw"><div class="swatch" style="background:#101C26"></div><p class="meta2"><b>Ink</b><code>--ink · #101C26</code>text, rules, emphasis</p></div>
+      <div class="sw"><div class="swatch" style="background:#69727C"></div><p class="meta2"><b>Muted</b><code>--muted · #69727C</code>secondary text</p></div>
+      <div class="sw"><div class="swatch" style="background:#E8E4DB"></div><p class="meta2"><b>Hairline</b><code>--hairline · #E8E4DB</code>all separation</p></div>
+      <div class="sw"><div class="swatch" style="background:#0B1F30"></div><p class="meta2"><b>Gulf navy</b><code>--navy · #0B1F30</code>dark bands only</p></div>
+      <div class="sw"><div class="swatch" style="background:#E2502F"></div><p class="meta2"><b>Hurricane coral</b><code>--accent · #E2502F</code>actions, stars, hovers — nothing else</p></div>
+      <div class="sw"><div class="swatch" style="background:#0F1B27"></div><p class="meta2"><b>Night</b><code>dark --bg · #0F1B27</code>page background (dark)</p></div>
+      <div class="sw"><div class="swatch" style="background:#16273A"></div><p class="meta2"><b>Night surface</b><code>dark --surface · #16273A</code>cards &amp; bars (dark)</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPE -->
+<section style="padding-bottom:96px">
+  <div class="wrap">
+    <div class="shead fade">
+      <p class="eyebrow">02 · Type</p>
+      <h2>Fraunces speaks, Inter works</h2>
+      <p>Fraunces (display serif, real italics) carries the brand voice; Inter handles UI and body. Italic + coral inside a headline marks the emotional beat — one per page, maximum.</p>
+    </div>
+    <div class="fade">
+      <div class="typerow"><span class="lbl">display / 76 · Fraunces 600</span><span style="font-family:var(--font-d);font-weight:600;font-size:clamp(34px,5vw,56px);letter-spacing:-.015em;line-height:1.08">Built for Florida. <em style="color:var(--accent)">Answered by humans.</em></span></div>
+      <div class="typerow"><span class="lbl">h2 / 44 · Fraunces 600</span><span style="font-family:var(--font-d);font-weight:600;font-size:clamp(26px,3.4vw,38px);letter-spacing:-.015em">Everything Florida throws at you</span></div>
+      <div class="typerow"><span class="lbl">eyebrow / 12 · Inter 600</span><span class="eyebrow">The Storm Center</span></div>
+      <div class="typerow"><span class="lbl">body / 17 · Inter 400</span><span style="max-width:560px;display:inline-block">Flood is its own policy — NFIP, private, or excess. We write all three and tell you honestly when the federal cap isn't enough.</span></div>
+      <div class="typerow"><span class="lbl">note / 13 · Inter 400</span><span class="note">No SSN. No phone number required. No spam calls, ever.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPONENTS -->
+<section style="padding-bottom:96px">
+  <div class="wrap">
+    <div class="shead fade">
+      <p class="eyebrow">03 · Components</p>
+      <h2>Hairlines do the separating</h2>
+      <p>No card chrome, no drop shadows except under the quote bar. Components below are rendered by the production stylesheet.</p>
+    </div>
+    <div class="fade">
+      <div class="demo-row">
+        <a class="btn" href="#" onclick="return false">Primary action</a>
+        <a class="btn btn-line" href="#" onclick="return false">Secondary action</a>
+        <a class="tlink" href="#" onclick="return false">Text link</a>
+        <button class="pillb" type="button" aria-pressed="true">Pill — selected</button>
+        <button class="pillb" type="button">Pill</button>
+      </div>
+      <div class="demo-row">
+        <form class="qbar sm" onsubmit="return false" style="flex:1;min-width:280px;max-width:520px">
+          <input type="text" placeholder="Enter your Florida address" aria-label="Demo input">
+          <button class="btn" type="submit">Get my quote</button>
+        </form>
+        <span class="note">Quote bar — the brand's signature object. Focus it.</span>
+      </div>
+      <div class="demo-row">
+        <span class="pill"><span class="dot" aria-hidden="true"></span> Seasonal pill &nbsp;·&nbsp; <a href="#" onclick="return false">with a link</a></span>
+        <div class="status" style="flex:1;min-width:260px"><span class="dot" aria-hidden="true"></span><span><b>Status strip:</b> all clear</span></div>
+      </div>
+      <ul class="rowlist topline" style="max-width:560px;margin-top:8px">
+        <li><a href="#" onclick="return false"><span>Hairline link row<span class="d">With a supporting line underneath</span></span><span class="ar">→</span></a></li>
+      </ul>
+      <p class="note" style="margin-top:28px">Also in the system: numbered "why" columns, coverage link columns, timeline rows, quote wall, team grid, checklist, result cards, step indicator, advisory bar (Storm Mode), toast.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MOTION + STATES -->
+<section style="padding-bottom:96px">
+  <div class="wrap">
+    <div class="shead fade">
+      <p class="eyebrow">04 · Motion &amp; states</p>
+      <h2>Few patterns, strictly budgeted</h2>
+    </div>
+    <ul class="rowlist topline fade" style="max-width:760px">
+      <li><div class="row"><span><b>Fade-up on scroll</b><span class="d">70ms stagger inside each group · IntersectionObserver · once</span></span></div></li>
+      <li><div class="row"><span><b>Hero headline word reveal</b><span class="d">Masked slide-up, 60ms/word — homepage only</span></span></div></li>
+      <li><div class="row"><span><b>Hover grammar</b><span class="d">Buttons lift 1px · arrows slide 4px · nav underline grows from left</span></span></div></li>
+      <li><div class="row"><span><b>Cross-page transitions</b><span class="d">@view-transition — soft fade between pages in supporting browsers</span></span></div></li>
+      <li><div class="row"><span><b>Reduced motion</b><span class="d">Every pattern collapses to static under prefers-reduced-motion — no exceptions</span></span></div></li>
+      <li><div class="row"><span><b>Storm Mode</b><span class="d">html.storm re-skins the site: advisory bar, binding-pause notes, Storm Center goes active. Toggle it in the banner above.</span></span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section style="padding-bottom:120px">
+  <div class="wrap">
+    <div class="shead fade">
+      <p class="eyebrow">05 · Voice</p>
+      <h2>Plain English, named humans, receipts</h2>
+    </div>
+    <div class="whygrid">
+      <div class="whyitem fade">
+        <p class="n">Do</p>
+        <h3>Specific beats super­lative</h3>
+        <p>"40+ carriers, one quote" — never "best" or "cheapest." If we can't prove it, we don't say it.</p>
+      </div>
+      <div class="whyitem fade">
+        <p class="n">Do</p>
+        <h3>Name the humans</h3>
+        <p>Reviews, bylines, specialists — people have names here. "Talk to a human" is the recurring CTA for a reason.</p>
+      </div>
+      <div class="whyitem fade">
+        <p class="n">Don't</p>
+        <h3>No scare tactics</h3>
+        <p>Storm content informs, never frightens. We say "carriers pause binding" and explain why — not "act now before it's too late."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="legal" style="border:none;padding:0">
+      <span>Internal — HH Insurance redesign system · June 2026</span>
+      <span><a href="index.html">View the prototype →</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

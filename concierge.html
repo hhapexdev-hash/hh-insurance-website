@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HH Concierge — Tell us what you need</title>
+<meta name="description" content="The conversational front door to HH Insurance: tell us if you're new, existing, or just researching — we'll guide you from there.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAF9F5">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1B27">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1F30'/%3E%3Ctext x='30' y='43' font-family='Georgia,serif' font-size='28' font-weight='700' fill='%23FAF9F5' text-anchor='middle'%3EHH%3C/text%3E%3Ccircle cx='49' cy='40' r='4.5' fill='%23E2502F'/%3E%3C/svg%3E">
+<meta property="og:title" content="HH Concierge — Tell us what you need">
+<meta property="og:description" content="New customer, existing client, or just researching? Say so — we'll guide you from there.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="chatpage">
+<a class="skip" href="#main">Skip to content</a>
+<div class="proto">Design prototype v6 — journeys are scripted + answers curated; production runs Claude over HH's library (strategy doc §13)</div>
+
+<header class="site" id="hdr">
+  <nav class="wrap nav" id="nav" aria-label="Main">
+    <a class="logo" href="index.html">HH<em>.</em><span class="logotag">Insurance</span></a>
+    <ul style="margin-left:auto"><li><a href="index.html">Classic site</a></li></ul>
+    <a class="tel" href="tel:7274985551">(727) 498-5551</a>
+  </nav>
+</header>
+
+<main id="main" class="chatmain">
+  <div class="chatlog" id="chatlog" role="log" aria-live="polite" aria-label="Conversation"></div>
+  <div class="chatbar">
+    <form id="chatForm">
+      <input type="text" id="chatInput" placeholder="Type a message…" aria-label="Your message" autocomplete="off">
+      <button class="btn" type="submit">Send</button>
+    </form>
+    <p class="note">Educational, not advice — your policy controls. Anything personal goes to a licensed human: <a class="tlink" href="tel:7274985551">(727) 498-5551</a></p>
+  </div>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

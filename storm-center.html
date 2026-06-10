@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Storm Center — HH Insurance</title>
+<meta name="description" content="Flood-zone lookup, the 2026 hurricane prep checklist, first-48-hours claims guidance, and plain-English Florida market briefings.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAF9F5">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1B27">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1F30'/%3E%3Ctext x='30' y='43' font-family='Georgia,serif' font-size='28' font-weight='700' fill='%23FAF9F5' text-anchor='middle'%3EHH%3C/text%3E%3Ccircle cx='49' cy='40' r='4.5' fill='%23E2502F'/%3E%3C/svg%3E">
+<meta property="og:title" content="The Storm Center — HH Insurance">
+<meta property="og:description" content="Flood-zone lookup, the 2026 hurricane prep checklist, first-48-hours claims guidance, and plain-English Florida market briefings.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="proto">Design prototype v2 · sample data &amp; placeholder figures · internal HH review, June 2026</div>
+
+<header class="site" id="hdr">
+  <nav class="wrap nav" id="nav" aria-label="Main">
+    <a class="logo" href="index.html">HH<em>.</em><span class="logotag">Insurance</span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navList">Menu</button>
+    <ul id="navList">
+      <li><a href="insurance.html">Insurance</a></li>
+      <li><a href="storm-center.html" aria-current="page">Storm Center</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="business.html">For business</a></li>
+    </ul>
+    <a class="tel" href="tel:7274985551">(727) 498-5551</a>
+    <a class="btn" href="quote.html">Get a quote</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">Home</a><span>/</span>Storm Center</p>
+    <h1 class="fade">Useful all season —<br>not just when <em>a cone shows up.</em></h1>
+    <p class="lede fade">Tools and plain-English answers we keep current, because we live here too. Bookmark this page in June; thank yourself in September.</p>
+    <div class="status fade calm-only" style="margin-top:40px" role="status">
+      <span class="dot" aria-hidden="true"></span>
+      <span><b>Atlantic outlook:</b> no active systems</span>
+      <span class="note">Sample — production updates daily from the National Hurricane Center</span>
+    </div>
+    <div class="status storm-only" style="margin-top:40px;border-color:#E5B8AA" role="status">
+      <span class="dot" aria-hidden="true" style="background:#D9482F"></span>
+      <span><b>Advisory in effect (demo):</b> tropical system approaching the Gulf — binding paused, claims lines open</span>
+      <span class="note">Production: live NHC advisory + cone link</span>
+    </div>
+  </div>
+</section>
+
+<!-- FLOOD ZONE LOOKUP -->
+<section class="section" id="zones" style="padding-top:72px">
+  <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:start" id="zonegrid">
+    <div class="fade">
+      <p class="eyebrow">Tool 01</p>
+      <h2 style="font-size:clamp(30px,4.2vw,44px);margin-top:14px">Check your flood zone</h2>
+      <p style="color:var(--muted);margin-top:14px">The map color is a starting point, not an answer. 20–25% of flood claims come from "low-risk" zones — surge and rainfall don't read FEMA maps. We'll show you what your address really faces.</p>
+    </div>
+    <div class="fade">
+      <form class="qbar sm" data-mock="Sample — production queries FEMA map layers + surge history for this address" aria-label="Flood zone lookup" style="max-width:none">
+        <input type="text" placeholder="Enter your address" aria-label="Address">
+        <button class="btn" type="submit">Check my zone</button>
+      </form>
+      <p class="note" style="margin-top:14px">Returns your FEMA zone, evacuation zone, and what each actually means for pricing — then a human can sanity-check it with you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PREP CHECKLIST -->
+<section class="section" id="prep" style="border-top:1px solid var(--hairline)">
+  <div class="wrap">
+    <div class="shead fade">
+      <p class="eyebrow">Tool 02</p>
+      <h2>The 2026 prep checklist</h2>
+      <p>Ten minutes on a calm day. Print it — it's the version you'll still have when the power's out.</p>
+    </div>
+    <ul class="checklist fade">
+      <li><label><input type="checkbox"><span>Photograph every room, closet, and the garage<span class="d">Open drawers. Serial numbers on electronics and appliances.</span></span></label></li>
+      <li><label><input type="checkbox"><span>Save policy PDFs and your wind-mitigation report to the cloud<span class="d">Declarations pages for home, flood, auto, boat — plus your agent's number.</span></span></label></li>
+      <li><label><input type="checkbox"><span>Record a 5-minute video walkthrough of the house<span class="d">Narrate it. It's the fastest proof-of-condition a claims adjuster can get.</span></span></label></li>
+      <li><label><input type="checkbox"><span>Clear gutters, drains, and anything that becomes a projectile<span class="d">Trim limbs over the roof line; stage shutter hardware where you can find it.</span></span></label></li>
+      <li><label><input type="checkbox"><span>Plan power and water for 7 days<span class="d">Generator test-run, fuel stabilizer, a case of water per person.</span></span></label></li>
+      <li><label><input type="checkbox"><span>Write the paper list: carrier claim lines, agent, neighbor, FEMA<span class="d">Phones die. Paper doesn't. Ours: (727) 498-5551.</span></span></label></li>
+    </ul>
+    <p style="margin-top:32px" class="fade"><button class="btn btn-line" type="button" id="printBtn">Print this checklist →</button></p>
+  </div>
+</section>
+
+<!-- CLAIMS -->
+<section class="section" id="claims" style="border-top:1px solid var(--hairline)">
+  <div class="wrap">
+    <div class="shead fade">
+      <p class="eyebrow">Tool 03</p>
+      <h2>Claims: the first 48 hours</h2>
+      <p>What to do — and what to never sign — when the storm has passed.</p>
+    </div>
+    <ul class="rowlist topline fade" style="max-width:760px">
+      <li><div class="row"><span><b>1 · Safety, then photos.</b><span class="d">Don't re-enter a flooded structure until power is confirmed off. Then photograph everything before you touch anything.</span></span></div></li>
+      <li><div class="row"><span><b>2 · Stop further damage, keep receipts.</b><span class="d">Tarps, water extraction, board-up — reasonable mitigation is reimbursable. Document it.</span></span></div></li>
+      <li><div class="row"><span><b>3 · Call your carrier's claim line — or call us first.</b><span class="d">We'll tell you whether the damage clears your hurricane deductible before you open a claim. Production: full carrier hotline list here.</span></span></div></li>
+      <li><div class="row"><span><b>4 · Don't sign an AOB on the driveway.</b><span class="d">Assignment-of-benefits contracts from door-knockers can sign away control of your claim. Have us read anything first — it's free.</span></span></div></li>
+      <li><div class="row"><span><b>5 · Keep a claim diary.</b><span class="d">Every call, name, and promise, with dates. It's boring and it wins disputes.</span></span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- BRIEFING -->
+<section class="section" id="briefing" style="border-top:1px solid var(--hairline);padding-bottom:120px">
+  <div class="wrap">
+    <div class="strip fade">
+      <div>
+        <h3>Coffee with HH — the market, in plain English</h3>
+        <p>Rates, Citizens, reform bills, and what they mean for your renewal. Short videos, no jargon, no scare tactics.</p>
+      </div>
+      <a class="btn btn-line" href="#" data-proto="/storm-center/briefing/">Watch the latest →</a>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <p class="eyebrow fade">Before the season gets interesting</p>
+    <h2 class="fade">Coverage questions? Ask a human today.</h2>
+    <form class="qbar fade" data-quote aria-label="Instant quote">
+      <input type="text" placeholder="Enter your Florida address" aria-label="Property address">
+      <button class="btn" type="submit">Get my quote</button>
+    </form>
+    <p class="after fade">Or call <a href="tel:7274985551">(727) 498-5551</a> · Mon–Fri 7:00am–5:30pm ET</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="frow">
+      <a class="logo" href="index.html">HH<em>.</em><span class="logotag">Insurance</span></a>
+      <ul>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="concierge.html">Concierge</a></li>
+        <li><a href="storm-center.html">Storm Center</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="legal">
+      <span>© 2026 HH Insurance Group, LLC · 9887 4th St N, Ste 200, St. Petersburg, FL 33702 · <a href="mailto:sales@hhinsgroup.com">sales@hhinsgroup.com</a></span>
+      <span><a href="#" data-proto="/privacy/">Privacy</a> &nbsp; <a href="#" data-proto="/accessibility/">Accessibility</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="mob-bar">
+  <a class="btn btn-line" href="tel:7274985551">Call us</a>
+  <a class="btn" href="quote.html">Get a quote</a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+<style>@media(max-width:880px){#zonegrid{grid-template-columns:1fr!important;gap:40px!important}}</style>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instant Quote — HH Insurance</title>
+<meta name="description" content="Address in, quotes out. Compare sample options from 40+ carriers in about 3 minutes — then bind with a human.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAF9F5">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1B27">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1F30'/%3E%3Ctext x='30' y='43' font-family='Georgia,serif' font-size='28' font-weight='700' fill='%23FAF9F5' text-anchor='middle'%3EHH%3C/text%3E%3Ccircle cx='49' cy='40' r='4.5' fill='%23E2502F'/%3E%3C/svg%3E">
+<meta property="og:title" content="Instant Quote — HH Insurance">
+<meta property="og:description" content="Address in, quotes out. Compare sample options from 40+ carriers in about 3 minutes — then bind with a human.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="proto">Design prototype v4 — this flow is a simulation with sample pricing; production wires step 3 to the live rater</div>
+
+<header class="site" id="hdr">
+  <nav class="wrap nav" id="nav" aria-label="Main">
+    <a class="logo" href="index.html">HH<em>.</em><span class="logotag">Insurance</span></a>
+    <ul style="margin-left:auto"><li><a href="index.html">← Back to site</a></li></ul>
+    <a class="tel" href="tel:7274985551">(727) 498-5551</a>
+  </nav>
+</header>
+
+<main id="main">
+<section style="padding:72px 0 120px">
+  <div class="wrap" style="max-width:880px">
+
+    <div class="steps" aria-label="Quote progress">
+      <span class="st on"><i>1</i> Address</span>
+      <span class="st"><i>2</i> Quick details</span>
+      <span class="st"><i>3</i> Your options</span>
+    </div>
+
+    <!-- STEP 1 -->
+    <div class="panel on" id="p1">
+      <h1>Let's start with <em>the address.</em></h1>
+      <p class="lede">It's how carriers rate Florida risk — roof, wind, water, everything starts here.</p>
+      <p class="note-storm storm-only" style="margin-bottom:22px">A named storm is in the box, so carriers have paused <b>new</b> binding. Your quotes still run — we bind the moment the box lifts, in the order requests came in.</p>
+      <div class="suggest-wrap">
+        <form class="qbar sm" id="f1" style="max-width:none">
+          <input type="text" id="qAddr" autocomplete="off" aria-autocomplete="list" placeholder="Enter your Florida address" aria-label="Property address">
+          <button class="btn" type="submit" id="toS2">Continue →</button>
+        </form>
+        <div class="suggest" id="suggest" hidden>
+          <p class="hint">Suggestions (sample)</p>
+        </div>
+      </div>
+      <div class="pills" role="group" aria-label="What are we quoting?">
+        <button class="pillb" type="button" data-line="Home">Home</button>
+        <button class="pillb" type="button" data-line="Flood">Flood</button>
+        <button class="pillb" type="button" data-line="Auto">Auto</button>
+        <button class="pillb" type="button" data-line="Boat & Marine">Boat &amp; Marine</button>
+        <button class="pillb" type="button" data-line="Business">Business</button>
+      </div>
+      <p class="note" style="margin-top:26px">No SSN. No phone number required. No spam calls, ever.</p>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="panel" id="p2">
+      <h1>Four quick things.</h1>
+      <p class="lede">For <b id="addrEcho2" style="color:var(--ink)"></b> — rough answers are fine; a human double-checks everything before binding.</p>
+      <form id="f2">
+        <div class="fieldgrid">
+          <div class="field">
+            <label for="yr">Year built</label>
+            <select id="yr"><option>2010 or newer</option><option>1995–2009</option><option>1975–1994</option><option>Before 1975</option><option>Not sure</option></select>
+          </div>
+          <div class="field">
+            <label for="roof">Roof replaced</label>
+            <select id="roof"><option>Within 10 years</option><option>10–20 years ago</option><option>Older / not sure</option></select>
+          </div>
+          <div class="field">
+            <label for="cur">Current carrier (optional)</label>
+            <input id="cur" type="text" placeholder="e.g. Citizens">
+          </div>
+          <div class="field">
+            <label for="em">Email for your quotes (optional)</label>
+            <input id="em" type="email" placeholder="you@email.com">
+          </div>
+        </div>
+        <div class="q-actions">
+          <button class="btn" type="submit" id="toS3">See my options →</button>
+          <button class="backlink" type="button" id="back1">← Back</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="panel" id="p3">
+      <div id="loading" aria-live="polite">
+        <h1>Checking the markets…</h1>
+        <p class="lede">Rating <b id="addrEcho3" style="color:var(--ink)"></b> across our carrier panel.</p>
+        <ul class="loadlist">
+          <li>Admitted carriers <span class="tick">✓</span></li>
+          <li>Specialty &amp; E&amp;S markets <span class="tick">✓</span></li>
+          <li>Flood programs (NFIP + private) <span class="tick">✓</span></li>
+          <li>Wind-mitigation credits <span class="tick">✓</span></li>
+          <li>Final pricing <span class="tick">✓</span></li>
+        </ul>
+      </div>
+      <div id="results" style="display:none">
+        <h1>Three ways to cover it.</h1>
+        <p class="lede">Sample <span id="lineEcho">home</span> options — in production these are live carrier returns, names and all.</p>
+        <p class="note-storm storm-only" style="margin-bottom:26px">Binding is paused while the storm is in the box. Lock your pick now — we bind in request order the moment carriers reopen.</p>
+        <p class="note" id="mitNote" style="display:none;margin-bottom:26px"></p>
+        <div class="resgrid">
+          <div class="rescard best">
+            <p class="tag">Best value</p>
+            <h3>Carrier A · Admitted</h3>
+            <p class="prem"><span class="num">$2,184</span> <small>/yr</small></p>
+            <ul>
+              <li>2% hurricane deductible</li>
+              <li>Water backup included</li>
+              <li>Screened enclosure optional</li>
+            </ul>
+            <a class="btn" href="tel:7274985551">Bind with a human</a>
+          </div>
+          <div class="rescard">
+            <p class="tag" style="color:var(--muted)">Lowest deductible</p>
+            <h3>Carrier B · Admitted</h3>
+            <p class="prem"><span class="num">$2,402</span> <small>/yr</small></p>
+            <ul>
+              <li>$2,500 flat AOP deductible</li>
+              <li>Roof schedule waived</li>
+              <li>Bundling discount available</li>
+            </ul>
+            <a class="btn btn-line" href="tel:7274985551">Bind with a human</a>
+          </div>
+          <div class="rescard">
+            <p class="tag" style="color:var(--muted)">Broadest coverage</p>
+            <h3>Carrier C · Specialty</h3>
+            <p class="prem"><span class="num">$2,665</span> <small>/yr</small></p>
+            <ul>
+              <li>Guaranteed replacement cost</li>
+              <li>ALE 24 months</li>
+              <li>Equipment breakdown included</li>
+            </ul>
+            <a class="btn btn-line" href="tel:7274985551">Bind with a human</a>
+          </div>
+        </div>
+        <div class="q-actions">
+          <button class="btn btn-line" type="button" data-mock="Sample — production emails the comparison to the address from step 2">Email me these quotes</button>
+          <button class="backlink" type="button" id="again">↺ Start over</button>
+        </div>
+        <p class="note" style="margin-top:30px">Sample figures for demonstration. Real quotes come from the live rater across 40+ carriers, reviewed by a licensed agent before anything binds. Call <a class="tlink" href="tel:7274985551">(727) 498-5551</a> — phones open 7:00am.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="legal" style="border:none;padding:0">
+      <span>© 2026 HH Insurance Group, LLC · 9887 4th St N, Ste 200, St. Petersburg, FL 33702</span>
+      <span><a href="index.html">hhinsgroup.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+<script>
+(function () {
+  var qs = function (s) { return document.querySelector(s); };
+  var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var params = new URLSearchParams(location.search);
+  var addrIn = qs("#qAddr");
+  if (params.get("addr")) addrIn.value = params.get("addr");
+
+  /* ---- sample address suggestions ---- */
+  var SAMPLES = [
+    "4250 1st Ave N, St. Petersburg, FL 33713",
+    "818 Snell Isle Blvd NE, St. Petersburg, FL 33704",
+    "12022 Gandy Blvd N, St. Petersburg, FL 33702",
+    "5021 Estero Blvd, Fort Myers Beach, FL 33931",
+    "210 Periwinkle Way, Sanibel, FL 33957"
+  ];
+  var sug = qs("#suggest"), sugHint = sug.querySelector(".hint");
+  function renderSug() {
+    var q = addrIn.value.trim().toLowerCase();
+    [].slice.call(sug.querySelectorAll("button")).forEach(function (b) { b.remove(); });
+    if (q.length < 2) { sug.hidden = true; return; }
+    var hits = SAMPLES.filter(function (a) { return a.toLowerCase().indexOf(q) !== -1; });
+    if (!hits.length) hits = SAMPLES.slice(0, 3);
+    hits.slice(0, 4).forEach(function (a) {
+      var b = document.createElement("button");
+      b.type = "button"; b.textContent = a;
+      b.addEventListener("click", function () {
+        addrIn.value = a; sug.hidden = true; addrIn.focus();
+      });
+      sug.appendChild(b);
+    });
+    sug.hidden = false;
+  }
+  addrIn.addEventListener("input", renderSug);
+  addrIn.addEventListener("focus", renderSug);
+  addrIn.addEventListener("keydown", function (e) { if (e.key === "Escape") sug.hidden = true; });
+  document.addEventListener("click", function (e) {
+    if (!sug.hidden && !sug.contains(e.target) && e.target !== addrIn) sug.hidden = true;
+  });
+
+  /* ---- line pills ---- */
+  var line = params.get("line") || "Home";
+  var pills = [].slice.call(document.querySelectorAll(".pillb"));
+  function setLine(v) {
+    line = v;
+    pills.forEach(function (p) { p.setAttribute("aria-pressed", String(p.dataset.line === v)); });
+  }
+  pills.forEach(function (p) { p.addEventListener("click", function () { setLine(p.dataset.line); }); });
+  setLine(pills.some(function (p) { return p.dataset.line === line; }) ? line : "Home");
+
+  /* ---- step machine ---- */
+  var stepEls = [].slice.call(document.querySelectorAll(".steps .st"));
+  var panels = { 1: qs("#p1"), 2: qs("#p2"), 3: qs("#p3") };
+  function go(n) {
+    Object.keys(panels).forEach(function (k) { panels[k].classList.toggle("on", +k === n); });
+    stepEls.forEach(function (s, i) {
+      s.classList.toggle("on", i === n - 1);
+      s.classList.toggle("done", i < n - 1);
+    });
+    scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+  }
+
+  qs("#f1").addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!addrIn.value.trim()) { addrIn.focus(); addrIn.placeholder = "We need an address to rate against"; return; }
+    sug.hidden = true;
+    qs("#addrEcho2").textContent = addrIn.value.trim();
+    go(2);
+  });
+  qs("#back1").addEventListener("click", function () { go(1); });
+  qs("#f2").addEventListener("submit", function (e) { e.preventDefault(); runQuotes(); });
+  qs("#again").addEventListener("click", function () { go(1); });
+
+  /* ---- pricing (deterministic per address; reacts to roof answer) ---- */
+  function hash(s) { var h = 0; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; }
+  var base = { "Home": 2150, "Flood": 780, "Auto": 1640, "Boat & Marine": 1120, "Business": 2890 };
+  function money(n) { return "$" + n.toLocaleString("en-US"); }
+  function countUp(el, val) {
+    if (reduced) { el.textContent = money(val); return; }
+    var start = Math.round(val * 0.86), t0 = null;
+    function step(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min(1, (ts - t0) / 650);
+      var ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = money(Math.round(start + (val - start) * ease));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function runQuotes() {
+    go(3);
+    qs("#loading").style.display = "";
+    qs("#results").style.display = "none";
+    qs("#addrEcho3").textContent = addrIn.value.trim();
+    var items = [].slice.call(document.querySelectorAll(".loadlist li"));
+    items.forEach(function (li) { li.classList.remove("ok"); });
+    items.forEach(function (li, i) { setTimeout(function () { li.classList.add("ok"); }, 420 * (i + 1)); });
+
+    setTimeout(function () {
+      var h = hash(addrIn.value.trim() + line);
+      var b = (base[line] || 1800) + (h % 420);
+      var prem = [b, Math.round(b * 1.12) + (h % 37), Math.round(b * 1.24) + (h % 53)];
+
+      var roof = qs("#roof").value, mit = qs("#mitNote");
+      var isProperty = (line === "Home" || line === "Flood");
+      if (isProperty && roof === "Within 10 years") {
+        var save = Math.round(b * 0.07);
+        prem = prem.map(function (x) { return Math.round(x * 0.93); });
+        mit.innerHTML = "✓ <b>Wind-mitigation credits applied</b> — your newer roof is saving roughly " + money(save) + "/yr in these numbers.";
+        mit.style.display = "";
+      } else if (isProperty && roof === "Older / not sure") {
+        mit.innerHTML = "Tip: a wind-mitigation inspection (~$150) often trims 10–20% off Florida property premiums. Ask your agent — it usually pays for itself in month one.";
+        mit.style.display = "";
+      } else {
+        mit.style.display = "none";
+      }
+
+      qs("#lineEcho").textContent = line.toLowerCase();
+      qs("#loading").style.display = "none";
+      qs("#results").style.display = "";
+      [].slice.call(document.querySelectorAll(".rescard .num")).forEach(function (el, i) { countUp(el, prem[i]); });
+    }, 420 * items.length + 700);
+  }
+
+  /* ---- standalone email button toast ---- */
+  var toast = document.getElementById("toast"), tt = null;
+  document.querySelectorAll("button[data-mock]").forEach(function (el) {
+    el.addEventListener("click", function () {
+      toast.textContent = el.getAttribute("data-mock");
+      toast.classList.add("show");
+      clearTimeout(tt);
+      tt = setTimeout(function () { toast.classList.remove("show"); }, 3000);
+    });
+  });
+})();
+</script>
+</body>
+</html>
