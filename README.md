@@ -1,41 +1,26 @@
-# HH Insurance — Website Redesign Prototype
+# HH Insurance — Chat-First Website (v7)
 
-Conversation-first redesign of [hhinsgroup.com](https://www.hhinsgroup.com/).
-No build step, no dependencies — static HTML/CSS/JS.
+The site **is** the conversation: a full-screen Concierge front door for
+[hhinsgroup.com](https://www.hhinsgroup.com/), backed by 45+ licensed humans.
+Static HTML/CSS/JS — no build step.
 
-## View it
+## Pages (3 public + 1 internal)
 
-- Open `index.html` in any browser, **or**
-- Enable GitHub Pages (Settings → Pages → Deploy from branch → `main`, root)
-  and the site goes live at `https://hhapexdev-hash.github.io/hh-insurance-website/`.
-
-## What's here
-
-| File | Page |
+| File | Purpose |
 |---|---|
-| `index.html` | Home — the **HH Concierge** chat leads; classic sections below |
-| `concierge.html` | Full-screen Concierge (same engine as the homepage panel) |
-| `quote.html` | Simulated 3-step instant-quote flow (every quote bar feeds it) |
-| `insurance.html` | Coverage hub — Personal · Marine · Business |
-| `flood.html` | Product-page template (flood is the flagship) |
-| `storm-center.html` | Flood-zone lookup, printable 2026 prep checklist, first-48-hours claims |
-| `about.html` / `reviews.html` / `business.html` / `learn.html` / `careers.html` / `contact.html` | Supporting pages |
+| `index.html` | The Concierge — coverage, story, reviews, COIs, careers, contact all live as chat journeys |
+| `quote.html` | Simulated 3-step instant quote (the transaction surface chat routes into) |
+| `storm-center.html` | Printable prep checklist, first-48-hours claims, zone lookup |
 | `styleguide.html` | Internal design-system reference |
-| `style.css` / `script.js` | Shared design system + behavior (Concierge engine, Ask HH, Storm Mode) |
-| `REDESIGN-STRATEGY.md` | Full strategy: audit, IA, SEO plan, measurement, production wiring |
 
-## Try the demos
+## Try it
 
-- **Concierge** — answer the opening question on the homepage; type an address mid-chat
-- **Ask HH** — press `⌘K` (or `/`) on any page
-- **Storm Mode** — toggle in the top banner; the whole site changes posture
-- **Quote flow** — same address always returns the same sample pricing
-- **Dark mode** — follows your OS automatically
+- Answer the opening question; type an address mid-chat; ask "what's an AOB?" or "are you hiring?"
+- **Storm Mode** — toggle in the top banner
+- **Dark mode** — follows your OS
 
 ## Status
 
-Design prototype: all figures, reviews, rosters, and pricing are **sample data**
-flagged in-page — verify before production. The Concierge runs scripted journeys
-+ a curated knowledge base in this prototype; production wires free-text to
-**Claude (`claude-sonnet-4-6`)** with RAG over HH's published guides — see
-`REDESIGN-STRATEGY.md` §13.
+Prototype: figures, reviews, and pricing are **sample data** flagged in-page.
+Chat runs scripted journeys + a curated KB; production wires free-text to
+**Claude (`claude-sonnet-4-6`)** with RAG over HH's guides — `REDESIGN-STRATEGY.md` §13.
