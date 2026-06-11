@@ -6,19 +6,24 @@ cross-linked (shared `style.css` + `script.js`, no build step):
 
 | File | Page |
 |---|---|
-| `index.html` | Home — **Concierge-led** (v6.1): the chat panel is the hero; the classic sections (coverage, Storm Center, proof, story, quote CTA) follow as supporting info |
-| `insurance.html` | Coverage hub — Personal · Marine · Business |
-| `flood.html` | **Product-page template** (flood is the flagship; every line gets this layout) |
-| `storm-center.html` | Storm Center — zone lookup, prep checklist, first-48-hours claims, Coffee with HH |
-| `about.html` | Story, timeline, house rules, team grid, press |
-| `reviews.html` | Review wall + platform links |
-| `business.html` | The portal story — COIs in minutes |
-| `learn.html` | The no-nonsense library (links target HH's real published guide URLs) |
-| `careers.html` | Recruitment rebuilt on the growth story |
-| `contact.html` | Contact — humans, hours, after-hours claims routing |
-| `quote.html` | **Simulated 3-step instant-quote flow** — every quote bar on the site feeds it (address carries over); sample pricing is deterministic per address so demos feel live |
-| `styleguide.html` | Internal handoff: tokens, type scale, components, motion budget, voice rules — rendered by the production stylesheet, not mockups |
-| `concierge.html` | **The conversational front door** — ChatGPT-style guided journeys (new / existing / researching), free-text answers from the shared KB, storm-aware, every path ends in an action. Production wiring: §13 |
+| `index.html` | **The site = the Concierge** (v7): a full-screen chat front door. Coverage, the story, reviews, business/COI, careers, and contact all live as chat journeys — no separate pages |
+| `quote.html` | The transaction surface: simulated 3-step instant-quote flow (chat and the header CTA feed it; deterministic sample pricing) |
+| `storm-center.html` | The one content page kept: printable 2026 prep checklist, first-48-hours claims steps, flood-zone lookup — things you bookmark, print, and share mid-storm |
+| `styleguide.html` | Internal design-system handoff (not in public nav) |
+
+> **v7 — the chat-maximalist cut (HH's call):** 13 public pages → **3**.
+> `insurance`, `flood`, `about`, `reviews`, `business`, `learn`, `careers`,
+> `contact`, and the standalone `concierge` page were removed; everything
+> they did now happens inside the conversation (richer journeys: COI →
+> csr@ handoff, reviews and careers as chat answers with real outbound
+> links, contact folded into the human handoff, learn links target HH's
+> live published guides). Pages survive only where a page beats a chat:
+> the **quote flow** (forms transact) and the **Storm Center** (print,
+> bookmark, share during a storm). *Known trade-off:* fewer indexable
+> pages narrows the SEO/AEO surface — mitigation is that HH's existing
+> WordPress guide library stays live at hhinsgroup.com (the KB cites it),
+> and production can re-add thin content/landing pages purely as search
+> surfaces later without touching the chat-first navigation.
 
 > **v4 — Storm Mode (operational design):** a site-wide demo state, toggled
 > from the prototype banner on any page (persists via localStorage). When ON:
@@ -157,7 +162,7 @@ Insurance) fronted by an address-entry field on the homepage.
    (`/florida-homeowners-insurance-sanibel/`); video series on `/coffeewithhh1/`.
    This dilutes topical authority precisely where HH is strongest (flood).
 4. **The expertise is invisible at the brand level.** The flood library, the
-   TV segments, the CPCU, the 1979→2018→45-person story — none of it is part
+   TV segments, the CPCU, the 1979’2018→45-person story — none of it is part
    of the homepage narrative (the homepage sells "instant quotes" generically).
 5. **Sloppy artifacts in the index.** "Recruitment Landing Page" as a live
    title; `/author/admin/` for the founder; "HHI Insurance" typo'd brand in
@@ -269,7 +274,7 @@ claims steps incl. the AOB warning, Coffee with HH. Update cadence matters
 more than polish; this page earns links and AI-answer citations year-round.
 
 ### About/Press (built — `about.html`)
-The 1979→2018→today timeline, three house rules, the team grid (the
+The 1979’2018→today timeline, three house rules, the team grid (the
 review-named agents first; sample roster flagged), press rows.
 `/author/admin/` content moves here with proper Person schema.
 
