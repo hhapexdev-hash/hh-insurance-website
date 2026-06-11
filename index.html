@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HH Insurance — Built for Florida. Answered by humans.</title>
-<meta name="description" content="Instant quotes from 40+ carriers for home, flood, auto, boat, and business — from the St. Pete agency Tampa Bay news calls first.">
+<title>HH Insurance — Tell us what you need</title>
+<meta name="description" content="Florida insurance, handled in one conversation. New customer, existing client, or just researching — the HH Concierge guides you, backed by 45+ licensed humans in St. Pete.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAF9F5">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1B27">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1F30'/%3E%3Ctext x='30' y='43' font-family='Georgia,serif' font-size='28' font-weight='700' fill='%23FAF9F5' text-anchor='middle'%3EHH%3C/text%3E%3Ccircle cx='49' cy='40' r='4.5' fill='%23E2502F'/%3E%3C/svg%3E">
-<meta property="og:title" content="HH Insurance — Built for Florida. Answered by humans.">
-<meta property="og:description" content="Instant quotes from 40+ carriers for home, flood, auto, boat, and business — from the St. Pete agency Tampa Bay news calls first.">
+<meta property="og:title" content="HH Insurance — Tell us what you need">
+<meta property="og:description" content="Florida insurance, handled in one conversation. Backed by 45+ licensed humans in St. Pete — phones on at 7am.">
 <meta property="og:type" content="website">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"InsuranceAgency","name":"HH Insurance Group, LLC","url":"https://www.hhinsgroup.com/","telephone":"+1-727-498-5551","email":"sales@hhinsgroup.com","address":{"@type":"PostalAddress","streetAddress":"9887 4th St N, Ste 200","addressLocality":"St. Petersburg","addressRegion":"FL","postalCode":"33702","addressCountry":"US"},"openingHours":"Mo-Fr 07:00-17:30","areaServed":{"@type":"State","name":"Florida"},"founder":{"@type":"Person","name":"Jake Holehouse","honorificSuffix":"CPCU"}}
@@ -19,256 +19,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="chatpage">
 <a class="skip" href="#main">Skip to content</a>
-<div class="proto">Design prototype v2 · sample data &amp; placeholder figures · internal HH review, June 2026</div>
+<div class="proto">Design prototype v7 — chat-first; journeys scripted + answers curated; production runs Claude Sonnet over HH's library (strategy doc §13)</div>
 
 <header class="site" id="hdr">
-  <nav class="wrap nav" id="nav" aria-label="Main">
+  <nav class="wrap nav simple" id="nav" aria-label="Main">
     <a class="logo" href="index.html">HH<em>.</em><span class="logotag">Insurance</span></a>
-    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navList">Menu</button>
-    <ul id="navList">
-      <li><a href="insurance.html">Insurance</a></li>
-      <li><a href="storm-center.html">Storm Center</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="business.html">For business</a></li>
-    </ul>
-    <a class="tel" href="tel:7274985551">(727) 498-5551</a>
-    <a class="btn" href="quote.html">Get a quote</a>
+    <span class="navright">
+      <a href="storm-center.html">Storm Center</a>
+      <a class="tel" href="tel:7274985551">(727) 498-5551</a>
+      <a class="btn" href="quote.html">Get a quote</a>
+    </span>
   </nav>
 </header>
 
-<main id="main">
-
-<!-- HERO — the Concierge leads -->
-<section class="hero has-chat">
-  <div class="wrap">
-    <p class="pill"><span class="dot" aria-hidden="true"></span> Hurricane season is here &nbsp;·&nbsp; <a href="storm-center.html#prep">2026 prep checklist</a></p>
-    <h1 class="fade">Built for Florida.<br><em>Answered by humans.</em></h1>
-    <p class="lede fade">Tell us what you need — the Concierge guides you, and a licensed St.&nbsp;Pete team backs every answer.</p>
-    <div class="chatpanel fade" aria-label="HH Concierge">
-      <div class="chatlog" id="chatlog" role="log" aria-live="polite" aria-label="Conversation"></div>
-      <div class="chatbar">
-        <form id="chatForm">
-          <input type="text" id="chatInput" placeholder="Type a message…" aria-label="Your message" autocomplete="off">
-          <button class="btn" type="submit">Send</button>
-        </form>
-      </div>
-    </div>
-    <p class="panel-foot note fade">Educational, not advice · <a href="concierge.html">Full screen ↗</a> · Prefer forms? <a href="quote.html">Instant quote →</a> · <button class="ask-open" type="button" style="font-size:13px;color:inherit;border-bottom:1px solid var(--hairline)">Quick answers (⌘K)</button></p>
-    <p class="note-storm storm-only">Carriers pause <b>new</b> binding while a named storm is in the box — quotes still run, and we bind in request order the moment it lifts. Existing clients: you're covered; see the <a class="tlink" href="storm-center.html#claims">first-48-hours guide</a>.</p>
-    <div class="trustline fade" aria-label="Trust signals">
-      <span><span class="stars" aria-hidden="true">★★★★★</span> <b>4.9</b> on Google</span>
-      <span><b>45+</b> licensed pros</span>
-      <span>Family roots since <b>1979</b></span>
-      <span>Tampa Bay TV's <b>go-to explainer</b></span>
-    </div>
-    <div class="carriers fade" aria-label="A few of our 40+ carriers">
-      <div class="marq" aria-hidden="true">
-        <span>Safeco</span><span>Travelers</span><span>Nationwide</span><span>The Hartford</span><span>Foremost</span><span>Main Street America</span><span>National General</span><span>Hagerty</span><span>+ 30 more markets</span>
-        <span>Safeco</span><span>Travelers</span><span>Nationwide</span><span>The Hartford</span><span>Foremost</span><span>Main Street America</span><span>National General</span><span>Hagerty</span><span>+ 30 more markets</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COVERAGE -->
-<section class="section" id="coverage" style="padding-top:64px">
-  <div class="wrap">
-    <div class="shead-split fade">
-      <div>
-        <p class="eyebrow">Coverage</p>
-        <h2>Everything Florida throws at you</h2>
-      </div>
-      <p>One agency, one renewal calendar, one number to call.</p>
-    </div>
-    <div class="covgrid">
-      <div class="covcol fade">
-        <h3>Personal</h3>
-        <ul>
-          <li><a href="#" data-proto="/insurance/home/">Homeowners <span class="ar">→</span></a></li>
-          <li><a href="flood.html">Flood <span class="ar">→</span></a></li>
-          <li><a href="#" data-proto="/insurance/auto/">Auto <span class="ar">→</span></a></li>
-          <li><a href="#" data-proto="/insurance/condo-renters/">Condo &amp; renters <span class="ar">→</span></a></li>
-          <li><a href="#" data-proto="/insurance/umbrella/">Umbrella <span class="ar">→</span></a></li>
-          <li><a href="#" data-proto="/insurance/collector-car/">Collector car <span class="ar">→</span></a></li>
-        </ul>
-      </div>
-      <div class="covcol fade">
-        <h3>Boat &amp; Marine</h3>
-        <ul>
-          <li><a href="#" data-proto="/insurance/boat/">Boat &amp; yacht <span class="ar">→</span></a></li>
-          <li><a href="#" data-proto="/insurance/boat-builders/">Boat builders <span class="ar">→</span></a></li>
-          <li><a href="#" data-proto="/insurance/marine-liability/">Marine liability <span class="ar">→</span></a></li>
-          <li><a href="#" data-proto="/insurance/hull/">Hull &amp; equipment <span class="ar">→</span></a></li>
-          <li><a href="#" data-proto="/insurance/charter/">Charter &amp; tour <span class="ar">→</span></a></li>
-          <li><a href="#" data-proto="/insurance/marinas/">Marinas &amp; yards <span class="ar">→</span></a></li>
-        </ul>
-      </div>
-      <div class="covcol fade">
-        <h3>Business</h3>
-        <ul>
-          <li><a href="#" data-proto="/insurance/bop/">Business owners (BOP) <span class="ar">→</span></a></li>
-          <li><a href="#" data-proto="/insurance/commercial-auto/">Commercial auto <span class="ar">→</span></a></li>
-          <li><a href="#" data-proto="/insurance/workers-comp/">Workers' comp <span class="ar">→</span></a></li>
-          <li><a href="#" data-proto="/insurance/professional/">Professional (E&amp;O) <span class="ar">→</span></a></li>
-          <li><a href="#" data-proto="/insurance/cyber/">Cyber <span class="ar">→</span></a></li>
-        </ul>
-        <p style="margin-top:16px"><a class="all" href="insurance.html">All coverage →</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY -->
-<section class="section" style="border-top:1px solid var(--hairline)">
-  <div class="wrap">
-    <div class="shead fade">
-      <p class="eyebrow">Why HH</p>
-      <h2>Markets. Knowledge. Service.</h2>
-    </div>
-    <div class="whygrid">
-      <div class="whyitem fade">
-        <p class="n">01</p>
-        <h3>40+ carriers compete for you</h3>
-        <p>Admitted and specialty markets, compared side by side. A captive agent can only show you one answer.</p>
-      </div>
-      <div class="whyitem fade">
-        <p class="n">02</p>
-        <h3>Flood-nerd expertise</h3>
-        <p>CPCU-led, with the plain-English flood guides locals actually share. When TV news needs Florida insurance explained, they call us.</p>
-      </div>
-      <div class="whyitem fade">
-        <p class="n">03</p>
-        <h3>Humans who pick up at 7am</h3>
-        <p>You'll know your agent by name — our reviews do. Business clients get certificates in minutes, not days.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STORM CENTER -->
-<section class="section band-dark">
-  <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:start" id="stormgrid">
-    <div class="fade">
-      <p class="eyebrow">The Storm Center</p>
-      <h2 style="font-size:clamp(32px,4.4vw,48px);margin:14px 0 18px">Useful all season — not just when a cone shows up</h2>
-      <p style="font-size:16.5px">Tools and plain-English answers we keep current, because we live here too.</p>
-      <div style="margin-top:48px;padding-top:28px;border-top:1px solid var(--hairline-navy)">
-        <p style="font-family:var(--font-d);font-size:clamp(40px,5vw,56px);font-weight:600;color:#fff;line-height:1">20–25%</p>
-        <p style="font-size:14.5px;margin-top:10px;max-width:340px">of flood claims come from <b style="color:#fff">outside</b> high-risk zones (FEMA). Homeowners insurance never covers rising water.</p>
-      </div>
-    </div>
-    <div class="dark fade">
-      <ul class="rowlist">
-        <li><a href="storm-center.html#zones"><span>Check your flood zone<span class="d">What your address really faces — beyond the map color</span></span><span class="ar">→</span></a></li>
-        <li><a href="storm-center.html#prep"><span>2026 prep checklist<span class="d">What to photograph, file, and back up before a storm has a name</span></span><span class="ar">→</span></a></li>
-        <li><a href="storm-center.html#claims"><span>Claims: the first 48 hours<span class="d">What to document, what not to sign</span></span><span class="ar">→</span></a></li>
-        <li><a href="storm-center.html#briefing"><span>Coffee with HH<span class="d">The Florida market, explained in plain English</span></span><span class="ar">→</span></a></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section class="section proof">
-  <div class="wrap">
-    <p class="agg fade"><span class="stars" aria-hidden="true">★★★★★</span> &nbsp;4.9 across Google · Yelp · BBB <span style="opacity:.6">(sample)</span></p>
-    <div class="slides" id="carousel">
-      <figure class="slide active">
-        <blockquote>“Landon answered my questions after hours — and still found better coverage for less.”</blockquote>
-        <figcaption>Auto client, St. Petersburg · public review excerpt</figcaption>
-      </figure>
-      <figure class="slide">
-        <blockquote>“Julie found coverage $1,500 less than our renewal — all inside a few days.”</blockquote>
-        <figcaption>Homeowner, Pinellas County · public review excerpt</figcaption>
-      </figure>
-      <figure class="slide">
-        <blockquote>“Christian and Joe tailored the coverage to exactly what we needed.”</blockquote>
-        <figcaption>Boat owner, Tampa Bay · public review excerpt</figcaption>
-      </figure>
-    </div>
-    <div class="dots">
-      <button class="dotb" aria-current="true" aria-label="Review 1"></button>
-      <button class="dotb" aria-label="Review 2"></button>
-      <button class="dotb" aria-label="Review 3"></button>
-    </div>
-    <p style="margin-top:32px" class="fade"><a class="tlink" href="reviews.html">Read more reviews</a></p>
-  </div>
-</section>
-
-<!-- STORY -->
-<section class="section" style="border-top:1px solid var(--hairline)">
-  <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:start" id="storygrid">
-    <div class="fade">
-      <p class="eyebrow">The HH story</p>
-      <h2 style="font-size:clamp(34px,4.6vw,52px)">“We started<br>at zero.”</h2>
-    </div>
-    <div class="fade">
-      <p style="color:var(--muted);margin-bottom:16px;font-size:16.5px">The Holehouse family has worked Florida insurance since <b style="color:var(--ink)">1979</b>. In 2018, Jake and his father Ron restarted from scratch in St. Petersburg — <b style="color:var(--ink)">three people, zero policies</b>.</p>
-      <p style="color:var(--muted);margin-bottom:16px;font-size:16.5px">Today: <b style="color:var(--ink)">45+ licensed professionals</b>, a CPCU-led team, and the agency Tampa Bay newsrooms call when the market needs explaining. Still family-run. Still answering at 7am.</p>
-      <p style="margin-top:24px"><a class="tlink" href="about.html">Meet the team</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- PORTAL -->
-<section style="padding-bottom:120px">
-  <div class="wrap">
-    <div class="strip fade">
-      <div>
-        <h3>Run a business? Skip the certificate wait.</h3>
-        <p>Our in-house platform turns COIs around in minutes and answers policy questions around the clock. Tech does the paperwork; your agent does the thinking.</p>
-      </div>
-      <a class="btn btn-line" href="business.html">For business →</a>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final">
-  <div class="wrap">
-    <p class="eyebrow fade">Get started</p>
-    <h2 class="fade">See your options in about 3 minutes</h2>
-    <form class="qbar fade" data-quote aria-label="Instant quote">
-      <input type="text" placeholder="Enter your Florida address" aria-label="Property address">
-      <button class="btn" type="submit">Get my quote</button>
+<main id="main" class="chatmain">
+  <div class="chatlog" id="chatlog" role="log" aria-live="polite" aria-label="Conversation"></div>
+  <div class="chatbar">
+    <form id="chatForm">
+      <input type="text" id="chatInput" placeholder="Type a message…" aria-label="Your message" autocomplete="off">
+      <button class="btn" type="submit">Send</button>
     </form>
-    <p class="after fade">Or talk to a human: <a href="tel:7274985551">(727) 498-5551</a> · Mon–Fri 7:00am–5:30pm ET</p>
+    <p class="note">Educational, not advice — your policy controls. Anything personal goes to a licensed human: <a class="tlink" href="tel:7274985551">(727) 498-5551</a></p>
   </div>
-</section>
-
 </main>
 
-<footer class="site">
+<footer class="homefoot">
   <div class="wrap">
-    <div class="frow">
-      <a class="logo" href="index.html">HH<em>.</em><span class="logotag">Insurance</span></a>
-      <ul>
-        <li><a href="insurance.html">Insurance</a></li>
-        <li><a href="concierge.html">Concierge</a></li>
-        <li><a href="storm-center.html">Storm Center</a></li>
-        <li><a href="learn.html">Learn</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="careers.html">Careers</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="legal">
-      <span>© 2026 HH Insurance Group, LLC · 9887 4th St N, Ste 200, St. Petersburg, FL 33702 · <a href="mailto:sales@hhinsgroup.com">sales@hhinsgroup.com</a></span>
-      <span><a href="#" data-proto="/privacy/">Privacy</a> &nbsp; <a href="#" data-proto="/accessibility/">Accessibility</a></span>
-    </div>
+    <span><span class="stars" aria-hidden="true">★★★★★</span> 4.9 on Google · 45+ licensed pros · Family roots since 1979</span>
+    <span><a href="storm-center.html">Storm Center</a> · <a href="quote.html">Instant quote</a> · <a href="tel:7274985551">(727) 498-5551</a></span>
+    <span class="legal2">© 2026 HH Insurance Group, LLC · 9887 4th St N, Ste 200, St. Petersburg, FL 33702 · <a href="mailto:sales@hhinsgroup.com" style="font-weight:500">sales@hhinsgroup.com</a></span>
   </div>
 </footer>
 
-<div class="mob-bar">
-  <a class="btn btn-line" href="tel:7274985551">Call us</a>
-  <a class="btn" href="quote.html">Get a quote</a>
-</div>
-
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="script.js"></script>
-<style>@media(max-width:880px){#stormgrid,#storygrid{grid-template-columns:1fr!important;gap:48px!important}}</style>
 </body>
 </html>
